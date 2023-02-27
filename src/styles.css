@@ -1,0 +1,137 @@
+body {
+    height: vh;
+    width: vw;
+    margin: 0;
+    font-size: 14px;
+    font-family: "verdana", arial;
+  }
+  .container {
+    width: 980px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container.modal-open {
+    filter: blur(5px);
+    -ms-filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -o-filter: blur(5px);
+  }
+  .col {
+    background: #eaeaea;
+    width: 270px;
+    margin-right: 2px;
+  }
+  .col:nth-child(3n) {
+    margin-right: 0;
+  }
+  .col__cover {
+    border: 1px solid #eaeaea;
+  }
+  .col__cover img {
+    width: 100%;
+    min-height: 100%;
+    display: block;
+  }
+  .col__detail {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .col__detail h2 {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+  .btn {
+    padding: 10px;
+    display: inline-block;
+    background: #1a8bde;
+    color: #ffffff;
+    text-decoration: none;
+    border: 0;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: rgba(0, 0, 0, 0.72);
+  }
+  .modal-wrapper {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.72);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal {
+    background: #eaeaea;
+    width: 72%;
+    max-width: 980px;
+    transition-duration: 4s;
+    transition-timing-function: linear;
+    border-radius: 3px;
+  }
+  .modal-header {
+    padding: 20px 20px 10px 20px;
+    box-sizing: border-box;
+    position: relative;
+    border-bottom: 1px solid #cccccc;
+  }
+  .modal-header .btn-close {
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    top: 10px;
+    right: 10px;
+  }
+  .btn-close__icon {
+    background-image: url("https://png.icons8.com/ios/2x/delete-sign-filled.png");
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+  }
+  .modal-body {
+    padding: 10px 20px 20px 20px;
+    box-sizing: border-box;
+    font-size: 1em;
+  }
+  .show {
+    display: block;
+  }
+  .visible {
+    display: flex;
+  }
+  .hide {
+    display: none;
+  }
+  .title {
+    margin: 0;
+    font-size: 16px;
+    padding-right: 22px;
+  }
+  
+  @media screen and (max-width: 480px) {
+    .container {
+      flex-direction: column;
+    }
+    .col {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+    .col__cover {
+      max-height: 350px;
+      border: 1px solid #eaeaea;
+    }
+    .col__cover img {
+      width: auto;
+    }
+  }
+  
