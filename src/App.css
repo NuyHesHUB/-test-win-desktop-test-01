@@ -1,11 +1,52 @@
-.App {
+*{box-sizing: border-box; margin: 0; padding: 0;}
+.ReactModal__Overlay{background: transparent !important;}
+.ReactModal__Content{
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+.App{padding: 0 20px; position: relative; width: 100%; height: 100vh; background: teal;}
+
+.icon_wrap{
+  display: flex; 
+  flex-direction:column; 
+  /* flex-wrap: wrap;  */
+  width: 65px;
+  /* height: 65px; */
+  margin-top: 10px; 
+  /* 드래그 금지 */
+  -ms-user-select: none; 
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.icon_wrap:hover{
+  background: rgba(27, 16, 127, 0.63);
+  /* border: 1px dashed #fff; */
+  /* box-shadow: 0 0 0 1px #000 inset; */
+}
+.icon{width: 40px; height: 40px; margin: 0 auto;}
+.icon_title{margin: 0; display: inline-block; text-align: center; font-size: 13px;}
+
+.dock{
   width: 100%;
-  height: 100vh;
-  background: tan;
+  height: 40px;
+  background: #ededed;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
 }
-.desk-top-icon{
-  width: 80px;
-  margin-left: 10px;
+.dock-start{
+  padding: 10px 20px;
 }
-.icon{width: 80px; height: 80px; background: red; text-align: center; line-height: 80px;}
-.icon-text{text-align: center; font-size: 14px;}
+
+/* modal */
+.title_wrap{width: 100%; height: 30px; background: blue; display: flex; justify-content: space-between;}
+.title_wrap img{width: 20px; height: 20px; margin-top: 5px;}
+.title_wrap span{color: #fff;}
+.title_icon{}
+
+.box{background: red; cursor: move;}

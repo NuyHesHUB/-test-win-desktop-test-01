@@ -42,8 +42,7 @@ function App() {
       right: 'auto',
       bottom: 'auto',
       marginRight: '-50%',
-      /* transform: 'translate(-50%, -50%)', */
-      transform: 'translate(50%, 50%)',
+      transform: 'translate(-50%, -50%)',
     },
   };
   
@@ -90,47 +89,69 @@ function App() {
             <img className='icon' src={item.image} alt="icon" />
             <p className='icon_title' >{item.name}</p>
           </span>
-          
-            <Draggable  nodeRef={nodeRef} onDrag={(e, data) => trackPos(data)}>
-              
-                <Modal
-                  isOpen={modalIndexOpen === index}
-                  onRequestClose={() => closeModal(index)}
-                  style={customStyles}
-                  contentLabel='Example Modal'
-                >
-                  <div ref={nodeRef} className="box">
-                <span>BOX</span>
-                <span>
-                  x: {position.x.toFixed(0)}, y: {position.y.toFixed(0)}
-                </span>
-
-                  <div className='title_wrap'>
-                  <div>
-                    <img className='title_icon' src={item.image} alt="icon" />
-                    <span>{item.name}</span>
-                  </div>
-                  <div>
-                    <button onClick={closeModal}>─</button>
-                    <button onClick={closeModal}>□</button>
-                    <button onClick={closeModal}>X</button>
-                  </div>
-                </div>
-                <h2>Modal {item.detail}</h2>
-                </div>
-                </Modal>
-              
-            </Draggable>
-          {/* map end */}
+          <Modal
+            isOpen={modalIndexOpen === index}
+            onRequestClose={() => closeModal(index)}
+            style={customStyles}
+            contentLabel='Example Modal'
+          >
+             <Draggable
+              nodeRef={nodeRef}
+              onDrag={(e, data) => trackPos(data)}
+              /* onStart={handleStart}
+              onStop={handleEnd} */
+            >
+        <div
+          ref={nodeRef}
+          className="box"
+          /* style={{ opacity: Opacity ? "0.6" : "1" }} */
+        >
+          <span>BOX</span>
+          <h2>Modal {item.detail}</h2>
+          <span>
+            x: {position.x.toFixed(0)}, y: {position.y.toFixed(0)}
+          </span>
         </div>
-      ))}
+      </Draggable>
+            <div className='title_wrap'>
+              <div>
+                <img className='title_icon' src={item.image} alt="icon" />
+                <span>{item.name}</span>
+              </div>
+              <div>
+                <button onClick={closeModal}>─</button>
+                <button onClick={closeModal}>□</button>
+                <button onClick={closeModal}>X</button>
+              </div>
+            </div>
+            {/* <h2>Modal {item.detail}</h2> */}
 
-      <div className='dock'>
+
+          </Modal>
+          {/* map end */}
+          
+
+          <div className='dock'>
             <button className='dock-start'><img src="https://win98icons.alexmeub.com/images/start-button.png" alt="start_icon" /></button>
             <span>PM4:33</span>
           </div>
+        </div>
+      ))}
+      
     </div>
   );
 }
 
 export default App;
+/* {array.map((item, index) => (
+  <div key={item.id}>
+    <span className='icon_wrap' onDoubleClick={() => openModalId(index)}>
+      <img className='icon' src={item.image} alt="icon" />
+      <p className='icon_title' >{item.name}</p>
+    </span>
+<Modal
+            isOpen={modalIndexOpen === index}
+            onRequestClose={() => closeModal(index)}
+            style={customStyles}
+            contentLabel='Example Modal'
+          ></Modal> */
